@@ -1,3 +1,10 @@
 <h1>
   {{title}}
 </h1>
+
+<h2 *ngIf='af.auth | async'>
+  Dados do usuário logado
+</h2>
+<pre *ngIf='af.auth | async'> {{ (af.auth | async | json) }} </pre>
+<button (click)="login()">Login</button>
+<button (click)="logout()">Logout</button>
